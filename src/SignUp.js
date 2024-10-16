@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+//import Container from '@material-ui/core/Container';
+import Container from '@mui/material/Container';
 import AppBarSec from "./views/AppBarSec";
 import FormAltaPaciente from '../src/pages/FormAltaPaciente';
 
