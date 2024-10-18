@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
-//import Link from '@material-ui/core/Link';
+import { withStyles } from '@mui/styles'; // Asegúrate de que estás usando el paquete correcto
 import Link from '@mui/material/Link';
 import AppBarMain from '../components/AppBarMain';
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
@@ -33,7 +32,8 @@ const styles = (theme) => ({
     marginLeft: theme.spacing(3),
   },
   linkSecondary: {
-    color: theme.palette.secondary.black,
+    //color: theme.palette.secondary.black,
+    color: theme.palette.secondary.main,
   },
 });
 

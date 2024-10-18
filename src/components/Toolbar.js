@@ -1,4 +1,4 @@
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@mui/styles'; // Asegúrate de que estás usando el paquete correcto
 import Toolbar from '@mui/material/Toolbar';
 
 export const styles = (theme) => ({
