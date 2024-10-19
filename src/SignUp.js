@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-//import Container from '@material-ui/core/Container';
+import { withStyles } from '@mui/styles';
 import Container from '@mui/material/Container';
 import AppBarSec from "./views/AppBarSec";
-import FormAltaPaciente from '../src/pages/FormAltaPaciente';
+//import FormAltaPaciente from '../src/pages/FormAltaPaciente';
 
 const styles = (theme) => ({
   root: {
@@ -47,7 +46,7 @@ function DatosPersonales(props) {
     <div>
       <AppBarSec></AppBarSec>
     </div>
-      <FormAltaPaciente></FormAltaPaciente>
+      {/* <FormAltaPaciente></FormAltaPaciente> */}
     </Container>
 
   );

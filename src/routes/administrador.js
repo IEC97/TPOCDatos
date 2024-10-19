@@ -14,7 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 //import SearchPersonal from '../pages/FormSearchPersonal';
 
 
-/* const drawerWidth = 240;
+const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
@@ -37,7 +37,7 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar,
 });
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 
 const Routes = (props) => {
@@ -45,7 +45,7 @@ const Routes = (props) => {
 
   return (
     <div >
-      <Router history={history}>
+      {/* <Router history={history}> */}
         <div className={classes.root}>
           <Drawer
             variant="permanent"
@@ -60,10 +60,10 @@ const Routes = (props) => {
             </List>
           </Drawer>
           <main className={classes.content}>      
-            <Route path="/SearchPersonal" component={SearchPersonal}/>            
+            {/* <Route path="/SearchPersonal" component={SearchPersonal}/>             */}
           </main>
         </div>
-      </Router>
+      {/* </Router> */}
     </div>
   );
 }
@@ -72,4 +72,4 @@ Routes.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Routes); */
+export default withStyles(styles)(Routes);
