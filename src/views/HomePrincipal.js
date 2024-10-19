@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+// import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Navigate } from "react-router-dom";
 import Home from "../App";
 import Login from "../SignIn";
 //import LoginStaff from '../SignInStaff';
@@ -19,7 +20,7 @@ class App extends Component {
 				{/* <Route path="/loginStaff/" component={LoginStaff}/>
 				<Route path="/VistaAdmin/" component={VistaAdmin} />	
 				<Route path="/VistaJugador/" component={VistaJugador} />						 */}
-				<Route exact path="/" render={() => <Redirect to="/home/"/>} />
+				<Route exact path="/" render={() => <Navigate to="/home/"/>} />
 
 			</Router>
 		)

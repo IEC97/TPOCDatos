@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import {Router,Route,Link} from 'react-router-dom'
 //import createBrowserHistory from 'history/createBrowserHistory';
 import PropTypes from 'prop-types';
 import { withStyles } from '@mui/styles'; // Asegúrate de que estás usando el paquete correcto
@@ -45,7 +41,7 @@ const Routes = (props) => {
 
   return (
     <div >
-      {/* <Router history={history}> */}
+      <Router history={history}>
         <div className={classes.root}>
           <Drawer
             variant="permanent"
@@ -60,10 +56,10 @@ const Routes = (props) => {
             </List>
           </Drawer>
           <main className={classes.content}>      
-            {/* <Route path="/SearchPersonal" component={SearchPersonal}/>             */}
+            <Route path="/SearchPersonal" component={SearchPersonal}/>            
           </main>
         </div>
-      {/* </Router> */}
+      </Router>
     </div>
   );
 }

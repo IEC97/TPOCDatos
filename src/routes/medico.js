@@ -49,7 +49,7 @@ const Routes = (props) => {
   return (
 
     <div >
-      {/* <Router history={history}> */}
+      <Router history={history}>
         <div className={classes.root}>
           <Drawer
             variant="permanent"
@@ -75,13 +75,13 @@ const Routes = (props) => {
           </Drawer>
           <main className={classes.content}>
             {/* <div className={classes.toolbar} /> */}
-            {/* <Route path="/medico/turnos" component={Turnos}/> 
+            <Route path="/medico/turnos" component={Turnos}/> 
             <Route path="/medico/listadoMedicoRecetas" component={ListadoMedicoRecetas}/>
             <Route path="/medico/SearchPacientes" component={SearchPacientes}/>                
-            <Route path="/medico/DatosPersonal" component={DatosPersonal}/>                     */}
+            <Route path="/medico/DatosPersonal" component={DatosPersonal}/>                    
           </main>
         </div>
-      {/* </Router> */}
+      </Router>
     </div>
   );
 }
