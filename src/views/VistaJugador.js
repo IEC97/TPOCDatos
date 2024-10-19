@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import CssBaseline from '@material-ui/core/CssBaseline';
 import CssBaseline from '@mui/material/CssBaseline';
 import Appbar from '../components/AppBar.js';
 import RoutesSecretariaMedico from '../routes/medico'

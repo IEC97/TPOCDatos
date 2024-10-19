@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
-import Home from "./App";
-import Login from "./SignIn";
-import LoginStaff from './SignInStaff';
-import SignUp from "./SignUp";
-import VistaAdmin from './views/VistaAdmin';
-import VistaJugador from './views/VistaJugador';
+import Home from "../App";
+import Login from "../SignIn";
+import LoginStaff from '../SignInStaff';
+import SignUp from "../SignUp";
+import VistaAdmin from './VistaAdmin';
+import VistaJugador from './VistaJugador';
 
 class App extends Component {
 
