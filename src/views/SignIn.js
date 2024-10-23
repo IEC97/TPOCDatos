@@ -56,7 +56,7 @@ function SignIn({ history }) { // Usa history como prop
       alert('Inicio de sesión exitoso!');
       console.log('Usuario autenticado:', { email });
       // Aquí rediriges al usuario
-      history.push('/views/VistaAdmin2'); // Usa history.push para redirigir
+      history.push('/views/VistaAdmin'); // Usa history.push para redirigir
     } else {
       alert('Credenciales incorrectas. Intenta de nuevo.');
     }

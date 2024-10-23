@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Login from './views/SignIn'; // Tu componente de inicio de sesión
-import VistaAdmin2 from './views/VistaAdmin2';
+import VistaAdmin from './views/VistaAdmin';
 
 function HomePrincipal() {
   return (
     <Router>
       <Switch>
         <Route path="/SignIn" exact component={Login} />
-        <Route path="/VistaAdmin2" component={VistaAdmin2} />
+        <Route path="/VistaAdmin" component={VistaAdmin} />
         <Route exact path="/">
           <Redirect to="/SignIn" />
         </Route>

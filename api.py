@@ -8,7 +8,7 @@ label_encoder = joblib.load('label_encoder.pkl')
 
 @app.route('/',methods=['GET'])
 def form():
-    return render_template('form.html')
+    return render_template('VistaAdmin.js')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -22,7 +22,7 @@ def predict():
     features = np.array([[new_genre_encoded, hours]])
     print(features)
     prediction = model.predict(pd.DataFrame(features))
-    return render_template("form.html" , prediction=prediction)
+    return render_template("VistaAdmin.js" , prediction=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
