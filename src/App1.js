@@ -3,42 +3,63 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-// import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
+//import VistaAdmin from './views/VistaAdmin';
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  
+
+  const validCredentials = [
+    { email: 'user@example.com', password: 'password123' },
+    { email: 'admin@example.com', password: 'admin123' },
+  ];
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
+  const validatePassword = (password) => {
+    return password.length >= 6;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const email = data.get('email');
+    const password = data.get('password');
+  
+    // Validar el email
+    if (!validateEmail(email)) {
+      alert('Por favor, introduce un correo electrónico válido.');
+      return;
+    }
+  
+    // Validar la contraseña
+    if (!validatePassword(password)) {
+      alert('La contraseña debe tener al menos 6 caracteres.');
+      return;
+    }
+  
+    // Simulación de autenticación
+    const user = validCredentials.find(
+      (credential) => credential.email === email && credential.password === password
+    );
+  
+    if (user) {
+      alert('Inicio de sesión exitoso!');
+      console.log('Usuario autenticado:', { email });
+      // Aquí podrías redirigir al usuario
+      //window.location.href = '/dashboard';
+    } else {
+      alert('Credenciales incorrectas. Intenta de nuevo.');
+    }
   };
 
   return (
@@ -80,10 +101,6 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
             <Button
               type="submit"
               fullWidth
@@ -92,21 +109,8 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            {/* <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid> */}
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
