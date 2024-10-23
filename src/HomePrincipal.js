@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Login from './views/SignIn'; // Tu componente de inicio de sesión
-import VistaAdmin2 from './views/VistaAdmin2'; // Tu componente de dashboard
+import VistaAdmin2 from './views/VistaAdmin2';
 
 function HomePrincipal() {
   return (
