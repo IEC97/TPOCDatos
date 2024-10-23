@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { withRouter } from 'react-router-dom'; // Cambia aquí
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,13 +9,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+
 
 const defaultTheme = createTheme();
 
-export default function SignIn() {
-  
-  const navigate = useNavigate(); // Inicializa useNavigate
+function SignIn({ history }) { // Usa history como prop
 
   const validCredentials = [
     { email: 'user@example.com', password: 'password123' },
@@ -56,8 +55,8 @@ export default function SignIn() {
     if (user) {
       alert('Inicio de sesión exitoso!');
       console.log('Usuario autenticado:', { email });
-      // Aquí podrías redirigir al usuario
-      navigate('/views/VistaAdmin2'); // Redirige al usuario
+      // Aquí rediriges al usuario
+      history.push('/views/VistaAdmin2'); // Usa history.push para redirigir
     } else {
       alert('Credenciales incorrectas. Intenta de nuevo.');
     }
@@ -116,3 +115,5 @@ export default function SignIn() {
     </ThemeProvider>
   );
 }
+
+export default withRouter(SignIn); // Exporta con withRouter
