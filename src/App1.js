@@ -8,12 +8,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-//import VistaAdmin from './views/VistaAdmin';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
   
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   const validCredentials = [
     { email: 'user@example.com', password: 'password123' },
@@ -56,7 +57,7 @@ export default function SignIn() {
       alert('Inicio de sesión exitoso!');
       console.log('Usuario autenticado:', { email });
       // Aquí podrías redirigir al usuario
-      //window.location.href = '/dashboard';
+      navigate('/views/VistaAdmin2'); // Redirige al usuario
     } else {
       alert('Credenciales incorrectas. Intenta de nuevo.');
     }
