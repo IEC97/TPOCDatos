@@ -8,17 +8,24 @@ const VistaAdmin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes hacer la solicitud a tu API para obtener la predicción
-    // Ejemplo:
-    // const response = await fetch('/predict', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ genre_encoded: genre, Single_Player_Main_Story_Average: minutes }),
-    // });
-    // const data = await response.json();
-    // setPrediction(data.prediction);
+    // Hacer la solicitud a la API para obtener la predicción
+    const response = await fetch('/predict', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        genre_encoded: genre,
+        Single_Player_Main_Story_Average: minutes, // Este debe coincidir con lo que espera el backend
+      }),
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      setPrediction(data.prediction);
+    } else {
+      console.error('Error en la solicitud:', response.statusText);
+    }
   };
 
   return (
